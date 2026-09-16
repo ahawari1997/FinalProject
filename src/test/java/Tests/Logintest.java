@@ -17,6 +17,7 @@ public class Logintest extends Base {
     @Test(groups = "smoke")
     @Story("Successful Login")
     @Severity(SeverityLevel.BLOCKER)
+    @Description("Logs in with valid standard_user credentials and verifies redirect to inventory page with correct heading")
     public void standardUserCanLogIn(){
         Product productpage=signIn();
         Assert.assertTrue(driver().getCurrentUrl().endsWith("/inventory.html"),
