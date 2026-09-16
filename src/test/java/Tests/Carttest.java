@@ -4,6 +4,7 @@ import Core.Base;
 import Models.Products;
 import Pages.Cart;
 import Pages.Product;
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
@@ -16,7 +17,7 @@ import java.util.List;
 public class Carttest extends Base {
     private static final String PRODUCT_A = "Sauce Labs Backpack";
     private static final String PRODUCT_B = "Sauce Labs Bike Light";
-
+@Description("-----")
     @Test(groups = "smoke")
     @Story("Cart shows the items that were added")
     @Severity(SeverityLevel.CRITICAL)
