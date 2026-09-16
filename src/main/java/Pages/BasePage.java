@@ -85,20 +85,20 @@ protected void click(By locator){
 
 
 
-//    public File takeScreenshot(String testName) {
-//        try {
-//            Path dir = Path.of("target", "screenshots");
-//            Files.createDirectories(dir);
-//            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"));
-//            File destination = dir.resolve(testName + "_" + timestamp + ".png").toFile();
-//
-//            org.openqa.selenium.TakesScreenshot camera = (org.openqa.selenium.TakesScreenshot) driver;
-//            File source = camera.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-//            Files.copy(source.toPath(), destination.toPath());
-//            return destination;
-//        } catch (Exception e) {
-//            throw new com.FinalProject.exceptions.FrameworkException(
-//                    "Failed to capture screenshot for test '" + testName + "'", e);
-//        }
-//    }
+    public File takeScreenshot(String testName) {
+        try {
+            Path dir = Path.of("target", "screenshots");
+            Files.createDirectories(dir);
+            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"));
+            File destination = dir.resolve(testName + "_" + timestamp + ".png").toFile();
+
+            org.openqa.selenium.TakesScreenshot camera = (org.openqa.selenium.TakesScreenshot) driver;
+            File source = camera.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+            Files.copy(source.toPath(), destination.toPath());
+           return destination;
+       } catch (Exception e) {
+            throw new Exceptions.FramworkException(
+                    "Failed to capture screenshot for test '" + testName + "'", e);
+        }
+    }
 }
