@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Swag Labs - Smoke Suite" verbose="1">
+    <listeners>
+        <listener class-name="Listener.RetryTransformer"/>
+    </listeners>
+
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Tests.Logintest"/>
+            <class name="Tests.Producttest"/>
+            <class name="Tests.Carttest"/>
+            <class name="Tests.Checkouttest"/>
+        </classes>
+    </test>
+</suite>
