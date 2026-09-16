@@ -29,6 +29,7 @@ public class Login extends BasePage {
         this.wait= new WebDriverWait(driver,Duration.ofSeconds(3));
     }
 
+
     @Override
     protected By Uniquelement() {
         return LOGIN_BUTTON;
@@ -37,6 +38,9 @@ public class Login extends BasePage {
         driver.navigate().to("https://www.saucedemo.com/");
         return new Login(driver);
     }
+    /**
+     * Logs in with the given credentials and returns the resulting page.
+     */
 
     public Product logins(String username, String password) {
         type(USERNAME_INPUT, username);
