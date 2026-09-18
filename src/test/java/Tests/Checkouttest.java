@@ -5,6 +5,7 @@ import Models.Customer;
 import Pages.Cart;
 import Pages.CheckOutInfo;
 import Pages.Product;
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
@@ -19,6 +20,7 @@ public class Checkouttest extends Base {
             dataProviderClass = Swaglabs.dataproviders.DataProviders.class)
     @Story("Missing fields are rejected")
     @Severity(SeverityLevel.CRITICAL)
+    @Description("Test the missing fields")
     public void missingFieldsAreRejected(String firstName, String lastName, String postalCode, String expectedErrorFragment) {
         Product productsPage = signIn();
         productsPage.addToCart(PRODUCT_A);
